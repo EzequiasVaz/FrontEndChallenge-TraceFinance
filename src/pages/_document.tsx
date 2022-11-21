@@ -1,5 +1,6 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import React, { ReactElement } from 'react'
+import { getCssText } from '../styles/stitches.config'
 
 export default class MyDocument extends Document {
     static async getInitialProps(
@@ -12,6 +13,7 @@ export default class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
+                    <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                     <link rel="icon" href="/favicon.ico" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='crossorigin' />
